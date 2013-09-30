@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class='no-js lt-ie9 lt-ie8 lt-ie7'> <![endif]-->
+<!--[if IE 7]>         <html class='no-js lt-ie9 lt-ie8'> <![endif]-->
+<!--[if IE 8]>         <html class='no-js lt-ie9'> <![endif]-->
+<!--[if gt IE 8]><!--> <html class='no-js'> <!--<![endif]-->
+    <head>
+        <meta charset='utf-8'>
+        <title>Streetmix Pro - Tumblr Theme</title>
+
+        <!-- Various default header stuff. Use Tumblr theme when in doubt -->
+        <meta name='description' content=''>
+        <meta name='viewport' content='width=device-width'>
+
+        <link rel='stylesheet' href='http://static.tumblr.com/vr9xgox/PuGmmhqcs/normalize.css'>
+        <link rel='stylesheet' href='http://static.tumblr.com/vr9xgox/zbqmtbju7/main.css'>
+
+        <style>
+
+            /* Colors */
+            body {
+                background: white;
+                font-family: 'Helvetica Neue', HelveticaNeue, Arial, sans-serif;
+            }
+
+            h1 {
+                font-family: 'Helvetica Neue', HelveticaNeue, Arial, sans-serif;
+            }
+
+            h2, .attribution-tags {
+                font-family: 'Helvetica Neue', HelveticaNeue, Arial, sans-serif;
+            }
+
+            h1 a,
+            #pagination a,
+            .exposed-nav-wrapper li a,
+            .sub-title,
+            .search-header {
+                color: #444444; /* {TitleColor} */
+            }
+            
+            #pagination a.next:after {
+                border-left-color: #444444; /* {TitleColor} */
+            }
+
+            #pagination a.previous:after {
+                border-right-color: #444444; /* {TitleColor} */
+            }
+
+            .h-line {
+                background: #444444; /* {TitleColor} */
+            }
+
+            a {
+                color: #529ecc; /* {LinkColor} */
+            }
+
+            .link-wrapper h2 a {
+                background-color: #529ecc; /* {LinkColor} */
+            }
+
+            .nav-menu-bg {
+                background: #f6f6f6; /* {BackgroundColor} */
+            }
+            
+            .header-image {
+                background-image: url({HeaderImage});
+            }
+
+            .user-avatar {
+                background-color: #f6f6f6; /* {BackgroundColor} */
+                border-color: #f6f6f6; /* {BackgroundColor} */
+            }
+
+            .avatar-style-square .user-avatar {
+                -wekbit-box-shadow: 0 0 0 4px #f6f6f6; /* {BackgroundColor} */
+                -moz-box-shadow: 0 0 0 4px #f6f6f6; /* {BackgroundColor} */
+                box-shadow: 0 0 0 4px #f6f6f6; /* {BackgroundColor} */
+            }
+            
+            @media screen and (max-device-width: 568px) {
+                .header-image {
+                    background-image: url({HeaderImage-1024});
+                }
+            }
+
+            /* Custom CSS */
+            /* {CustomCSS} */
+
+            body {
+                overflow-x: hidden;
+            }
+
+            #page {
+                width: 100%;
+                height: 100%;
+                position: relative;
+            }
+
+            #left-column {
+                position: absolute;
+                width: 380px;
+                height: 100%;
+                box-sizing: border-box;
+                padding: 30px;
+                background-color: #f6f6f6; /* {BackgroundColor} */
+                z-index: 5;
+            }
+
+            header h1 {
+                font-size: 36px;
+                margin-top: 10px;
+            }
+
+            .sub-title {
+                color: black;
+                font-size: 18px;
+            }
+
+            .project-info {
+                font-size: 14px;
+                line-height: 140%;
+            }
+
+            .project-info h2 {
+                font-size: 18px;
+                margin-top: 24px;
+            }
+
+            .project-info hr {
+                height: 0;
+                border: 0px;
+                border-top: 1px solid #d1d1d1;
+                margin: 60px 0 30px;
+            }
+
+            ul.stakeholders {
+                list-style-type: none;
+                padding: 0;
+                white-space: nowrap;
+            }
+
+            ul.stakeholders li {
+                display: inline-block;
+                margin-right: 10px;
+            }
+
+            .streetmix-logo {
+                vertical-align: baseline;
+                margin-left: 4px;
+            }
+
+            .cfa-logo {
+                vertical-align: top;
+                margin-left: 4px;
+            }
+
+            #posts {
+                position: relative;
+                display: inline-block;
+                margin: 0;  /* overrides tumblr.com/main.css */
+                width: 100%;
+                box-sizing: border-box;  /* overrides tumblr.com/main.css */
+                padding-left: 380px;
+                max-width: none;  /* overrides tumblr.com/main.css */
+            }
+
+            .content {
+                padding: 0;  /* overrides tumblr.com/main.css */
+            }
+
+
+            .streetmix-image {
+                width: 100%;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center bottom;
+                position: relative;
+            }
+
+            .streetmix-image a {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+
+            .streetmix-image:hover::after {
+                content: '';
+                position: absolute;
+                display: block;
+                background-image: url('img/remix-me.png');
+                width: 149px;
+                height: 149px;
+                top: 0;
+                right: 0;
+            }
+
+            #streetmix-today {
+                height: 170px;
+                background-image: url('mockup/9th-st-today-title.png');
+                border-radius: 5px;
+            }
+
+            #streetmix-proposed {
+                height: 400px;
+                background-image: url('mockup/9th-st-proposed-title.png');
+            }
+
+            .proposed-text {
+                color: gray;
+                font-style: italic;
+                text-align: center;
+            }
+            .proposed-text a {
+                color: gray;
+                text-decoration: none;
+            }
+            .proposed-text a:hover {
+                text-decoration: underline;
+            }
+
+            .post-wrapper {
+                border-radius: 0;
+            }
+
+            .post-ish {
+                padding: 0 20px;
+            }
+
+            .post {
+                padding: 0;
+            }
+
+            .caption {
+                padding: 20px 40px;
+            }
+
+            article {
+                margin-top: 30px;
+            }
+
+
+            /* Some basic responsive CSS */
+
+            @media (max-width: 568px) {
+                #left-column {
+                    position: relative;
+                    width: 100%;
+                    height: auto;
+                }
+
+                #posts {
+                    position: relative;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                #streetmix-proposed {
+                    height: 250px;
+                }
+
+                h1 {
+                    font-size: 30px;
+                }
+
+                #about {
+                    display: none;
+                }
+
+            }
+
+
+        </style>
+    </head>
+    <body>
+
+        <section id='page'>
+
+            <section id='left-column'>
+
+                <header id='header'>
+
+                    <!-- {block:Title} -->
+                    <h1><a href='{Permalink}'>Redesign 9th Street</a></h1>
+                    <!-- {/block:Title} -->
+
+                    <span class='sub-title'>
+                        Help us redesign 9th Street in San Francisco! With your input what's now a parking lot could become a bicycle superhighway, or the site of SF's newest cable car.
+                    </span>
+
+                </header>
+
+                <div class='project-info'>
+
+                    <h2>To participate</h2>
+
+                    <ol>
+                        <li>Pick any version of 9th Street you see here as a starting point.</li>
+                        <li>Click on it to redesign it using Streetmix.</li>
+                        <li>When you’re done, e-mail the link to your street to <a href='mailto:9th-street@aresluna.org'>9th-street@aresluna.org</a></li>
+                    </ol>
+
+                    <h2>9th Street today</h2>
+
+                    <p>
+                        <div id='streetmix-today' class='streetmix-image'><a href='http://streetmix.net/ahhrrr/43/9th-st-today' target='_blank'></a></div>
+                    </p>
+
+                    <h2>Background and considerations</h2>
+
+                    <p>We want a better neighborhood! Here are the design considerations for our street:</p>
+
+                    <ul>
+                        <li>80 ft wide</li>
+                        <li>At least 3 car lanes, 10ft wide</li>
+                        <li>No parklets.</li>
+                    </ul>
+
+
+                    <h2>Deadline:  November 15, 2013</h2>
+
+                    <div id='about'>
+
+                        <hr>
+
+                        <h2>Project coordinators</h2>
+
+                        <ul class='stakeholders'>
+                            <li><a href='http://link-to-site.com/' target='_blank'><img src='mockup/stakeholder01.png' alt='San Francisco Department of Public Works' title='San Francisco Department of Public Works'></a></li>
+                            <li><a href='http://link-to-site.com/' target='_blank'><img src='mockup/stakeholder02.png' alt='San Francisco Planning Deparment' title='San Francisco Planning Deparment'></a></li>
+                            <li><a href='http://link-to-site.com/' target='_blank'><img src='mockup/stakeholder03.png' alt='SFMTA' title='SFMTA'></a></li>
+                        </ul>
+
+                        <h2>Powered by <a href='http://streetmix.net/' target='_blank'><img src='img/streetmix.png' alt='Streetmix' width='190' class='streetmix-logo'></a></h2>
+
+                        <p>A project by <a href='http://codeforamerica.org/' target='_blank'><img src='img/cfa-logo.png' alt='Code for America' width='90' class='cfa-logo'></a></p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section id='posts' class='content clearfix'>
+    
+                <!-- Header image for proposed image -->
+                <section>
+                    <div id='streetmix-proposed' class='streetmix-image'><a href='http://streetmix.net/ahhrrr/44/9th-st-proposed' target='_blank'></a></div>
+
+                    <p class='proposed-text'>
+                        <a href='http://streetmix.net/ahhrrr/44/9th-st-proposed' target='_blank'>Current official proposal for 9th Street by SFMTA. Click to remix!</a>
+                    </p>
+                </section>
+                <!-- end proposed image -->
+
+                <section class='post-ish'>
+                    <h2>Your proposals so far:</h2>
+                </section>
+
+                <!-- begin sample user submitted posts -->
+                <div data-page-id='{CurrentPage}'>
+
+                    <article>
+
+                        <!-- copied from actual page -->
+                        <div class="post-wrapper clearfix">
+                            <section class="post">
+                                
+                                <figure class="high-res with-caption" data-photo-width="1280">
+                                    <div class="photo-wrapper">
+                                        <div class="photo-wrapper-inner">
+                                            <a href="http://redesign-9th-st.tumblr.com/image/61151517613"><img src="http://25.media.tumblr.com/d016b2ca32496d0d1748b9277de84bf1/tumblr_mt37x7UoTH1siw8vko1_1280.png" alt="" width="1280" height="491"></a>
+                                        </div>
+                                    </div>
+                                    
+                                    <figcaption class="caption">
+                                        <p><a href="http://streetmix.net/ahhrrr/45/9th-st-pedestrian-version">9th St, Pedestrian version by @ahhrrr</a></p>
+
+                                        <blockquote>
+                                        <p>This is never going to happen</p>
+                                        </blockquote>
+                                    </figcaption>
+                                    
+                                </figure>
+                            </section>
+                            
+                            <section class="panel">
+                                <footer class="post-footer">
+                                    <section class="meta"> 
+                                        <ul class="post-date">
+                                            <li>
+                                                <a href="http://redesign-9th-st.tumblr.com/post/61151517613/9th-st-pedestrian-version-by-ahhrrr-this-is" title="2 weeks ago">Sep 13th, 2013</a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </section>
+                                    
+                                    <section class="post-controls">
+                                        <ul>
+                                            <li class="share-control">
+                                                <nav class="pop">
+                                                    <a href="#" class="share selector"></a>
+                                                    <div class="pop-menu share-menu south" id="share_61151517613">
+                                                        <ul>
+                                                            <li class="open-in-app"><a href="#" class="share-item open-in-app" data-post="61151517613">Open in app</a></li>
+                                                            <li><a href="http://facebook.com/sharer.php?u=http%3A%2F%2Fredesign-9th-st.tumblr.com%2Fpost%2F61151517613%2F9th-st-pedestrian-version-by-ahhrrr-this-is&amp;t=Redesign%209th%20Street" class="share-item facebook" target="_blank">Facebook</a></li>
+                                                            <li><a href="https://twitter.com/intent/tweet?text=Photo%3A%209th%20St%2C%20Pedestrian%20version%20by%20%40ahhrrr%20This%20is%20never%20going%20to%20happen%20http%3A%2F%2Ftmblr.co%2FZJ9KSquywXkj" class="share-item twitter" target="_blank">Tweet</a></li>
+                                                            <li><a href="mailto:?subject=A%20photo%20from%20Redesign%209th%20Street&amp;body=Photo%3A%209th%20St%2C%20Pedestrian%20version%20by%20%40ahhrrr%20This%20is%20never%20going%20to%20happen%20http%3A%2F%2Fredesign-9th-st.tumblr.com%2Fpost%2F61151517613%2F9th-st-pedestrian-version-by-ahhrrr-this-is" class="share-item mail">Mail</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </nav>
+                                            </li>
+                                            <li class="reblog-control"><a href="http://www.tumblr.com/reblog/61151517613/TleWvile" class="reblog_button" style="display: block;width:21px;height:21px;"><svg width="100%" height="100%" viewBox="0 0 537 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000"><path d="M 98.893,177.139c0.00-7.462, 4.826-12.275, 12.288-12.275L 405.12,164.864 l0.00,83.469 l 118.72-120.947L 405.12,8.678l0.00,81.51 L 49.382,90.189 c-15.206,0.00-27.648,12.429-27.648,27.648l0.00,171.814 l 77.146-71.603L 98.88,177.139 z M 438.874,332.646c0.00,7.45-4.826,12.275-12.275,12.275L 123.75,344.922 l0.00-83.469 l-116.506,120.922l 116.506,120.947l0.00-81.498 l 356.864,0.00 c 15.206,0.00, 27.648-12.454, 27.648-27.648L 508.262,220.134 l-69.402,71.59L 438.861,332.646 z"></path></svg></a></li>
+                                            <li class="like-control"><div class="like_button" data-post-id="61151517613" id="like_button_61151517613"><iframe id="like_iframe_61151517613" src="http://assets.tumblr.com/assets/html/like_iframe.html?_v=e6a1ab8af99851c003d650d932ba2011#name=redesign-9th-st&amp;post_id=61151517613&amp;color=black&amp;rk=TleWvile" scrolling="no" width="20" height="20" frameborder="0" class="like_toggle" allowtransparency="true"></iframe></div></li>
+                                        </ul>
+                                    </section>
+                                </footer>
+                            </section>
+                                    
+                        </div>
+
+
+                    <!-- the postgets duplicated 3x more times -->
+
+                        <!-- copied from actual page -->
+                        <div class="post-wrapper clearfix">
+                            <section class="post">
+                                
+                                <figure class="high-res with-caption" data-photo-width="1280">
+                                    <div class="photo-wrapper">
+                                        <div class="photo-wrapper-inner">
+                                            <a href="http://redesign-9th-st.tumblr.com/image/61151517613"><img src="http://25.media.tumblr.com/d016b2ca32496d0d1748b9277de84bf1/tumblr_mt37x7UoTH1siw8vko1_1280.png" alt="" width="1280" height="491"></a>
+                                        </div>
+                                    </div>
+                                    
+                                    <figcaption class="caption">
+                                        <p><a href="http://streetmix.net/ahhrrr/45/9th-st-pedestrian-version">9th St, Pedestrian version by @ahhrrr</a></p>
+
+                                        <blockquote>
+                                        <p>This is never going to happen</p>
+                                        </blockquote>
+                                    </figcaption>
+                                    
+                                </figure>
+                            </section>
+                            
+                            <section class="panel">
+                                <footer class="post-footer">
+                                    <section class="meta"> 
+                                        <ul class="post-date">
+                                            <li>
+                                                <a href="http://redesign-9th-st.tumblr.com/post/61151517613/9th-st-pedestrian-version-by-ahhrrr-this-is" title="2 weeks ago">Sep 13th, 2013</a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </section>
+                                    
+                                    <section class="post-controls">
+                                        <ul>
+                                            <li class="share-control">
+                                                <nav class="pop">
+                                                    <a href="#" class="share selector"></a>
+                                                    <div class="pop-menu share-menu south" id="share_61151517613">
+                                                        <ul>
+                                                            <li class="open-in-app"><a href="#" class="share-item open-in-app" data-post="61151517613">Open in app</a></li>
+                                                            <li><a href="http://facebook.com/sharer.php?u=http%3A%2F%2Fredesign-9th-st.tumblr.com%2Fpost%2F61151517613%2F9th-st-pedestrian-version-by-ahhrrr-this-is&amp;t=Redesign%209th%20Street" class="share-item facebook" target="_blank">Facebook</a></li>
+                                                            <li><a href="https://twitter.com/intent/tweet?text=Photo%3A%209th%20St%2C%20Pedestrian%20version%20by%20%40ahhrrr%20This%20is%20never%20going%20to%20happen%20http%3A%2F%2Ftmblr.co%2FZJ9KSquywXkj" class="share-item twitter" target="_blank">Tweet</a></li>
+                                                            <li><a href="mailto:?subject=A%20photo%20from%20Redesign%209th%20Street&amp;body=Photo%3A%209th%20St%2C%20Pedestrian%20version%20by%20%40ahhrrr%20This%20is%20never%20going%20to%20happen%20http%3A%2F%2Fredesign-9th-st.tumblr.com%2Fpost%2F61151517613%2F9th-st-pedestrian-version-by-ahhrrr-this-is" class="share-item mail">Mail</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </nav>
+                                            </li>
+                                            <li class="reblog-control"><a href="http://www.tumblr.com/reblog/61151517613/TleWvile" class="reblog_button" style="display: block;width:21px;height:21px;"><svg width="100%" height="100%" viewBox="0 0 537 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000"><path d="M 98.893,177.139c0.00-7.462, 4.826-12.275, 12.288-12.275L 405.12,164.864 l0.00,83.469 l 118.72-120.947L 405.12,8.678l0.00,81.51 L 49.382,90.189 c-15.206,0.00-27.648,12.429-27.648,27.648l0.00,171.814 l 77.146-71.603L 98.88,177.139 z M 438.874,332.646c0.00,7.45-4.826,12.275-12.275,12.275L 123.75,344.922 l0.00-83.469 l-116.506,120.922l 116.506,120.947l0.00-81.498 l 356.864,0.00 c 15.206,0.00, 27.648-12.454, 27.648-27.648L 508.262,220.134 l-69.402,71.59L 438.861,332.646 z"></path></svg></a></li>
+                                            <li class="like-control"><div class="like_button" data-post-id="61151517613" id="like_button_61151517613"><iframe id="like_iframe_61151517613" src="http://assets.tumblr.com/assets/html/like_iframe.html?_v=e6a1ab8af99851c003d650d932ba2011#name=redesign-9th-st&amp;post_id=61151517613&amp;color=black&amp;rk=TleWvile" scrolling="no" width="20" height="20" frameborder="0" class="like_toggle" allowtransparency="true"></iframe></div></li>
+                                        </ul>
+                                    </section>
+                                </footer>
+                            </section>
+                                    
+                        </div>
+
+                        <!-- copied from actual page -->
+                        <div class="post-wrapper clearfix">
+                            <section class="post">
+                                
+                                <figure class="high-res with-caption" data-photo-width="1280">
+                                    <div class="photo-wrapper">
+                                        <div class="photo-wrapper-inner">
+                                            <a href="http://redesign-9th-st.tumblr.com/image/61151517613"><img src="http://25.media.tumblr.com/d016b2ca32496d0d1748b9277de84bf1/tumblr_mt37x7UoTH1siw8vko1_1280.png" alt="" width="1280" height="491"></a>
+                                        </div>
+                                    </div>
+                                    
+                                    <figcaption class="caption">
+                                        <p><a href="http://streetmix.net/ahhrrr/45/9th-st-pedestrian-version">9th St, Pedestrian version by @ahhrrr</a></p>
+
+                                        <blockquote>
+                                        <p>This is never going to happen</p>
+                                        </blockquote>
+                                    </figcaption>
+                                    
+                                </figure>
+                            </section>
+                            
+                            <section class="panel">
+                                <footer class="post-footer">
+                                    <section class="meta"> 
+                                        <ul class="post-date">
+                                            <li>
+                                                <a href="http://redesign-9th-st.tumblr.com/post/61151517613/9th-st-pedestrian-version-by-ahhrrr-this-is" title="2 weeks ago">Sep 13th, 2013</a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </section>
+                                    
+                                    <section class="post-controls">
+                                        <ul>
+                                            <li class="share-control">
+                                                <nav class="pop">
+                                                    <a href="#" class="share selector"></a>
+                                                    <div class="pop-menu share-menu south" id="share_61151517613">
+                                                        <ul>
+                                                            <li class="open-in-app"><a href="#" class="share-item open-in-app" data-post="61151517613">Open in app</a></li>
+                                                            <li><a href="http://facebook.com/sharer.php?u=http%3A%2F%2Fredesign-9th-st.tumblr.com%2Fpost%2F61151517613%2F9th-st-pedestrian-version-by-ahhrrr-this-is&amp;t=Redesign%209th%20Street" class="share-item facebook" target="_blank">Facebook</a></li>
+                                                            <li><a href="https://twitter.com/intent/tweet?text=Photo%3A%209th%20St%2C%20Pedestrian%20version%20by%20%40ahhrrr%20This%20is%20never%20going%20to%20happen%20http%3A%2F%2Ftmblr.co%2FZJ9KSquywXkj" class="share-item twitter" target="_blank">Tweet</a></li>
+                                                            <li><a href="mailto:?subject=A%20photo%20from%20Redesign%209th%20Street&amp;body=Photo%3A%209th%20St%2C%20Pedestrian%20version%20by%20%40ahhrrr%20This%20is%20never%20going%20to%20happen%20http%3A%2F%2Fredesign-9th-st.tumblr.com%2Fpost%2F61151517613%2F9th-st-pedestrian-version-by-ahhrrr-this-is" class="share-item mail">Mail</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </nav>
+                                            </li>
+                                            <li class="reblog-control"><a href="http://www.tumblr.com/reblog/61151517613/TleWvile" class="reblog_button" style="display: block;width:21px;height:21px;"><svg width="100%" height="100%" viewBox="0 0 537 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000"><path d="M 98.893,177.139c0.00-7.462, 4.826-12.275, 12.288-12.275L 405.12,164.864 l0.00,83.469 l 118.72-120.947L 405.12,8.678l0.00,81.51 L 49.382,90.189 c-15.206,0.00-27.648,12.429-27.648,27.648l0.00,171.814 l 77.146-71.603L 98.88,177.139 z M 438.874,332.646c0.00,7.45-4.826,12.275-12.275,12.275L 123.75,344.922 l0.00-83.469 l-116.506,120.922l 116.506,120.947l0.00-81.498 l 356.864,0.00 c 15.206,0.00, 27.648-12.454, 27.648-27.648L 508.262,220.134 l-69.402,71.59L 438.861,332.646 z"></path></svg></a></li>
+                                            <li class="like-control"><div class="like_button" data-post-id="61151517613" id="like_button_61151517613"><iframe id="like_iframe_61151517613" src="http://assets.tumblr.com/assets/html/like_iframe.html?_v=e6a1ab8af99851c003d650d932ba2011#name=redesign-9th-st&amp;post_id=61151517613&amp;color=black&amp;rk=TleWvile" scrolling="no" width="20" height="20" frameborder="0" class="like_toggle" allowtransparency="true"></iframe></div></li>
+                                        </ul>
+                                    </section>
+                                </footer>
+                            </section>
+                                    
+                        </div>
+
+                        <!-- copied from actual page -->
+                        <div class="post-wrapper clearfix">
+                            <section class="post">
+                                
+                                <figure class="high-res with-caption" data-photo-width="1280">
+                                    <div class="photo-wrapper">
+                                        <div class="photo-wrapper-inner">
+                                            <a href="http://redesign-9th-st.tumblr.com/image/61151517613"><img src="http://25.media.tumblr.com/d016b2ca32496d0d1748b9277de84bf1/tumblr_mt37x7UoTH1siw8vko1_1280.png" alt="" width="1280" height="491"></a>
+                                        </div>
+                                    </div>
+                                    
+                                    <figcaption class="caption">
+                                        <p><a href="http://streetmix.net/ahhrrr/45/9th-st-pedestrian-version">9th St, Pedestrian version by @ahhrrr</a></p>
+
+                                        <blockquote>
+                                        <p>This is never going to happen</p>
+                                        </blockquote>
+                                    </figcaption>
+                                    
+                                </figure>
+                            </section>
+                            
+                            <section class="panel">
+                                <footer class="post-footer">
+                                    <section class="meta"> 
+                                        <ul class="post-date">
+                                            <li>
+                                                <a href="http://redesign-9th-st.tumblr.com/post/61151517613/9th-st-pedestrian-version-by-ahhrrr-this-is" title="2 weeks ago">Sep 13th, 2013</a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </section>
+                                    
+                                    <section class="post-controls">
+                                        <ul>
+                                            <li class="share-control">
+                                                <nav class="pop">
+                                                    <a href="#" class="share selector"></a>
+                                                    <div class="pop-menu share-menu south" id="share_61151517613">
+                                                        <ul>
+                                                            <li class="open-in-app"><a href="#" class="share-item open-in-app" data-post="61151517613">Open in app</a></li>
+                                                            <li><a href="http://facebook.com/sharer.php?u=http%3A%2F%2Fredesign-9th-st.tumblr.com%2Fpost%2F61151517613%2F9th-st-pedestrian-version-by-ahhrrr-this-is&amp;t=Redesign%209th%20Street" class="share-item facebook" target="_blank">Facebook</a></li>
+                                                            <li><a href="https://twitter.com/intent/tweet?text=Photo%3A%209th%20St%2C%20Pedestrian%20version%20by%20%40ahhrrr%20This%20is%20never%20going%20to%20happen%20http%3A%2F%2Ftmblr.co%2FZJ9KSquywXkj" class="share-item twitter" target="_blank">Tweet</a></li>
+                                                            <li><a href="mailto:?subject=A%20photo%20from%20Redesign%209th%20Street&amp;body=Photo%3A%209th%20St%2C%20Pedestrian%20version%20by%20%40ahhrrr%20This%20is%20never%20going%20to%20happen%20http%3A%2F%2Fredesign-9th-st.tumblr.com%2Fpost%2F61151517613%2F9th-st-pedestrian-version-by-ahhrrr-this-is" class="share-item mail">Mail</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </nav>
+                                            </li>
+                                            <li class="reblog-control"><a href="http://www.tumblr.com/reblog/61151517613/TleWvile" class="reblog_button" style="display: block;width:21px;height:21px;"><svg width="100%" height="100%" viewBox="0 0 537 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000"><path d="M 98.893,177.139c0.00-7.462, 4.826-12.275, 12.288-12.275L 405.12,164.864 l0.00,83.469 l 118.72-120.947L 405.12,8.678l0.00,81.51 L 49.382,90.189 c-15.206,0.00-27.648,12.429-27.648,27.648l0.00,171.814 l 77.146-71.603L 98.88,177.139 z M 438.874,332.646c0.00,7.45-4.826,12.275-12.275,12.275L 123.75,344.922 l0.00-83.469 l-116.506,120.922l 116.506,120.947l0.00-81.498 l 356.864,0.00 c 15.206,0.00, 27.648-12.454, 27.648-27.648L 508.262,220.134 l-69.402,71.59L 438.861,332.646 z"></path></svg></a></li>
+                                            <li class="like-control"><div class="like_button" data-post-id="61151517613" id="like_button_61151517613"><iframe id="like_iframe_61151517613" src="http://assets.tumblr.com/assets/html/like_iframe.html?_v=e6a1ab8af99851c003d650d932ba2011#name=redesign-9th-st&amp;post_id=61151517613&amp;color=black&amp;rk=TleWvile" scrolling="no" width="20" height="20" frameborder="0" class="like_toggle" allowtransparency="true"></iframe></div></li>
+                                        </ul>
+                                    </section>
+                                </footer>
+                            </section>
+                                    
+                        </div>
+
+                    </article>
+
+                <footer id='footer' class='content clearfix'>
+
+                    <div id='pagination'>
+                        <a href='{PreviousPage}' class='previous' data-current-page='{CurrentPage}' data-total-pages='{TotalPages}'>Previous<span class='bg'></span></a>
+                        <a href='{NextPage}' class='next' data-current-page='{CurrentPage}' data-total-pages='{TotalPages}'>Next<span class='bg'></span></a>
+                        <div class='loader'></div>
+                    </div>
+
+                </footer>
+
+            </section>
+
+        </section>
+
+
+    </body>
+</html>
