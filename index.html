@@ -4,15 +4,42 @@
 <!--[if IE 8]>         <html class='no-js lt-ie9'> <![endif]-->
 <!--[if gt IE 8]><!--> <html class='no-js'> <!--<![endif]-->
     <head>
+        <!--
+            Civic Bootstrap theme for Streetmix/Tumblr integration.
+            Design by Lou Huang.
+            Tumblr theme integration by Ezra Spier.
+            Tumblr code based on Optica <http://www.tumblr.com/theme/37310>
+        -->
+        {MobileAppHeaders}
         <meta charset='utf-8'>
         <title>Streetmix Pro - Tumblr Theme</title>
 
-        <!-- Various default header stuff. Use Tumblr theme when in doubt -->
-        <meta name='description' content=''>
+        <title>
+          {Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}
+          {block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}
+        </title>
+
+        {block:Description}
+            <meta name="description" content="{MetaDescription}">
+        {/block:Description}
+        <meta name="text:Disqus shortname" content="">
+        <meta name="text:Google analytics ID" content="">
+
+        <!-- more meta here!! -->
+
         <meta name='viewport' content='width=device-width'>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
 
         <link rel='stylesheet' href='http://static.tumblr.com/vr9xgox/PuGmmhqcs/normalize.css'>
         <link rel='stylesheet' href='http://static.tumblr.com/vr9xgox/zbqmtbju7/main.css'>
+
+        <!-- HTML5 Shiv -->
+        <!--[if lt IE 9]>
+                <script src="http://static.tumblr.com/hriofhd/Qj0m8pn7q/html5shiv.js"></script>
+        <![endif]-->
 
         <style>
 
