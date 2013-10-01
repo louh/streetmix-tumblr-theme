@@ -12,7 +12,6 @@
         -->
         {MobileAppHeaders}
         <meta charset='utf-8'>
-        <title>Streetmix Pro - Tumblr Theme</title>
 
         <title>
           {Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}
@@ -27,6 +26,23 @@
 
         <meta name="text:Today Street URL" content="">
         <meta name="image:Today Street Image" content="">
+
+        <meta name="text:Proposed Street URL" content="">
+        <meta name="image:Proposed Street Image" content="">
+
+        <meta name="text:Deadline" content="">
+
+        <meta name="text:Stakeholder 1 Name" content="">
+        <meta name="text:Stakeholder 1 URL" content="">
+        <meta name="image:Stakeholder 1 Image" content="">
+
+        <meta name="text:Stakeholder 2 Name" content="">
+        <meta name="text:Stakeholder 2 URL" content="">
+        <meta name="image:Stakeholder 2 Image" content="">
+
+        <meta name="text:Stakeholder 3 Name" content="">
+        <meta name="text:Stakeholder 3 URL" content="">
+        <meta name="image:Stakeholder 3 Image" content="">
 
         <meta name="text:Disqus shortname" content="">
         <meta name="text:Google analytics ID" content="">
@@ -235,7 +251,7 @@
 
             #streetmix-proposed {
                 height: 400px;
-                background-image: url('mockup/9th-st-proposed-title.png');
+                background-image: url('{image:Proposed Street Image}');
             }
 
             .proposed-text {
@@ -338,7 +354,7 @@
                     </p>
 
                     <h2>Background and considerations</h2>
-
+                    <!-- TODO: Variableize this section-->
                     <p>We want a better neighborhood! Here are the design considerations for our street:</p>
 
                     <ul>
@@ -348,7 +364,7 @@
                     </ul>
 
 
-                    <h2>Deadline:  November 15, 2013</h2>
+                    <h2>Deadline: {text:Deadline}</h2>
 
                     <div id='about'>
 
@@ -357,9 +373,9 @@
                         <h2>Project coordinators</h2>
 
                         <ul class='stakeholders'>
-                            <li><a href='http://link-to-site.com/' target='_blank'><img src='mockup/stakeholder01.png' alt='San Francisco Department of Public Works' title='San Francisco Department of Public Works'></a></li>
-                            <li><a href='http://link-to-site.com/' target='_blank'><img src='mockup/stakeholder02.png' alt='San Francisco Planning Deparment' title='San Francisco Planning Deparment'></a></li>
-                            <li><a href='http://link-to-site.com/' target='_blank'><img src='mockup/stakeholder03.png' alt='SFMTA' title='SFMTA'></a></li>
+                            <li><a href='{text:Stakeholder 1 URL}' target='_blank'><img src='{image:Stakeholder 1 Image}' alt='{text:Stakeholder 1 Name}' title='{text:Stakeholder 1 Name}'></a></li>
+                            <li><a href='{text:Stakeholder 2 URL}' target='_blank'><img src='{image:Stakeholder 2 Image}' alt='{text:Stakeholder 2 Name}' title='{text:Stakeholder 2 Name}'></a></li>
+                            <li><a href='{text:Stakeholder 3 URL}' target='_blank'><img src='{image:Stakeholder 3 Image}' alt='{text:Stakeholder 3 Name}' title='{text:Stakeholder 3 Name}'></a></li>
                         </ul>
 
                         <h2>Powered by <a href='http://streetmix.net/' target='_blank'><img src='http://static.tumblr.com/5ca8sut/9Xcmtz673/streetmix.png' alt='Streetmix' width='190' class='streetmix-logo'></a></h2>
@@ -376,7 +392,7 @@
     
                 <!-- Header image for proposed image -->
                 <section>
-                    <div id='streetmix-proposed' class='streetmix-image'><a href='http://streetmix.net/ahhrrr/44/9th-st-proposed' target='_blank'></a></div>
+                    <div id='streetmix-proposed' class='streetmix-image'><a href='{text:Proposed Street URL}' target='_blank'></a></div>
 
                     <p class='proposed-text'>
                         <a href='http://streetmix.net/ahhrrr/44/9th-st-proposed' target='_blank'>Current official proposal for 9th Street by SFMTA. Click to remix!</a>
