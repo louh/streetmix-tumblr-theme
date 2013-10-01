@@ -22,6 +22,12 @@
         {block:Description}
             <meta name="description" content="{MetaDescription}">
         {/block:Description}
+        <meta name="text:Street Name" content="">
+        <meta name="text:Submission Email" content="">
+
+        <meta name="text:Today Street URL" content="">
+        <meta name="image:Today Street Image" content="">
+
         <meta name="text:Disqus shortname" content="">
         <meta name="text:Google analytics ID" content="">
 
@@ -214,7 +220,7 @@
                 content: '';
                 position: absolute;
                 display: block;
-                background-image: url('img/remix-me.png');
+                background-image: url('http://static.tumblr.com/5ca8sut/sbDmtz65j/remix-me.png');
                 width: 149px;
                 height: 149px;
                 top: 0;
@@ -223,7 +229,7 @@
 
             #streetmix-today {
                 height: 170px;
-                background-image: url('mockup/9th-st-today-title.png');
+                background-image: url('{image:Today Street Image}');
                 border-radius: 5px;
             }
 
@@ -307,12 +313,10 @@
 
                 <header id='header'>
 
-                    <!-- {block:Title} -->
-                    <h1><a href='{Permalink}'>Redesign 9th Street</a></h1>
-                    <!-- {/block:Title} -->
+                    <h1><a href='/'>{Title}</a></h1>
 
                     <span class='sub-title'>
-                        Help us redesign 9th Street in San Francisco! With your input what's now a parking lot could become a bicycle superhighway, or the site of SF's newest cable car.
+                      {Description}
                     </span>
 
                 </header>
@@ -322,15 +326,15 @@
                     <h2>To participate</h2>
 
                     <ol>
-                        <li>Pick any version of 9th Street you see here as a starting point.</li>
+                      <li>Pick any version of {text:Street Name} you see here as a starting point.</li>
                         <li>Click on it to redesign it using Streetmix.</li>
-                        <li>When you’re done, e-mail the link to your street to <a href='mailto:9th-street@aresluna.org'>9th-street@aresluna.org</a></li>
+                        <li>When you’re done, e-mail the link to your street to <a href='{text:Submission Email}'>{text:Submission Email}</a></li>
                     </ol>
 
-                    <h2>9th Street today</h2>
+                    <h2>{text:Street Name} today</h2>
 
                     <p>
-                        <div id='streetmix-today' class='streetmix-image'><a href='http://streetmix.net/ahhrrr/43/9th-st-today' target='_blank'></a></div>
+                      <div id='streetmix-today' class='streetmix-image'><a href='{text:Today Street URL}' target='_blank'></a></div>
                     </p>
 
                     <h2>Background and considerations</h2>
@@ -358,9 +362,9 @@
                             <li><a href='http://link-to-site.com/' target='_blank'><img src='mockup/stakeholder03.png' alt='SFMTA' title='SFMTA'></a></li>
                         </ul>
 
-                        <h2>Powered by <a href='http://streetmix.net/' target='_blank'><img src='img/streetmix.png' alt='Streetmix' width='190' class='streetmix-logo'></a></h2>
+                        <h2>Powered by <a href='http://streetmix.net/' target='_blank'><img src='http://static.tumblr.com/5ca8sut/9Xcmtz673/streetmix.png' alt='Streetmix' width='190' class='streetmix-logo'></a></h2>
 
-                        <p>A project by <a href='http://codeforamerica.org/' target='_blank'><img src='img/cfa-logo.png' alt='Code for America' width='90' class='cfa-logo'></a></p>
+                        <p>A project by <a href='http://codeforamerica.org/' target='_blank'><img src='http://static.tumblr.com/5ca8sut/f65mtz667/cfa-logo.png' alt='Code for America' width='90' class='cfa-logo'></a></p>
                     </div>
 
                 </div>
