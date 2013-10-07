@@ -215,6 +215,11 @@
                 max-width: none;  /* overrides tumblr.com/main.css */
             }
 
+            #posts article {
+              margin: 0;
+
+            }
+
             .content {
                 padding: 0;  /* overrides tumblr.com/main.css */
             }
@@ -271,6 +276,9 @@
 
             .post-wrapper {
                 border-radius: 0;
+                box-shadow: none;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
             }
 
             .post-ish {
@@ -406,244 +414,249 @@
                     <h2>Your proposals so far:</h2>
                 </section>
 
-                <!-- begin sample user submitted posts -->
                 <div data-page-id='{CurrentPage}'>
-
-                    <article>
-
-                        <!-- copied from actual page -->
-                        <div class="post-wrapper clearfix">
-                            <section class="post">
-                                
-                                <figure class="high-res with-caption" data-photo-width="1280">
-                                    <div class="photo-wrapper">
-                                        <div class="photo-wrapper-inner">
-                                            <a href="http://redesign-9th-st.tumblr.com/image/61151517613"><img src="http://25.media.tumblr.com/d016b2ca32496d0d1748b9277de84bf1/tumblr_mt37x7UoTH1siw8vko1_1280.png" alt="" width="1280" height="491"></a>
+                    {block:Posts}
+                            <article class="{block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Photo}photo {/block:Photo}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:Date}not-page post-{PostID}{/block:Date} {block:PermalinkPage} active exposed{/block:PermalinkPage}" {block:Date}data-post-id="post_{PostID}"{/block:Date}>
+                                <div class="post-wrapper clearfix">
+                                  <section class="post">
+                                    {block:Photo}
+                                      <figure class="{block:HighRes}high-res{/block:HighRes}{block:Caption} with-caption{/block:Caption}" data-photo-width="{PhotoWidth-HighRes}">
+                                        <div class="photo-wrapper">
+                                          <div class="photo-wrapper-inner">
+                                            {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}">{LinkCloseTag}
+                                          </div>
                                         </div>
-                                    </div>
-                                    
-                                    <figcaption class="caption">
-                                        <p><a href="http://streetmix.net/ahhrrr/45/9th-st-pedestrian-version">9th St, Pedestrian version by @ahhrrr</a></p>
+                                        {block:Caption}
+                                          <figcaption class="caption">
+                                            {Caption}
+                                          </figcaption>
+                                        {/block:Caption}
+                                      </figure>
+                                    {/block:Photo}
 
-                                        <blockquote>
-                                        <p>This is never going to happen</p>
+                                        {block:Text}
+                                            {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+                                            {block:Body}
+                                            <div class="body-text">
+                                                {Body}
+                                            </div>
+                                            {/block:Body}
+                                        {/block:Text}
+
+                                        {block:Photoset}
+                                        <figure class="photoset {block:Caption}with-caption{/block:Caption}">
+                                            {Photoset}
+                                            {block:Caption}
+                                            <figcaption class="caption">
+                                                {Caption}
+                                            </figcaption>
+                                            {/block:Caption}
+                                        </figure>
+                                        {/block:Photoset}
+
+                                        {block:Quote}
+                                        <blockquote class="{Length}">
+                                            <p>{Quote}</p>
                                         </blockquote>
-                                    </figcaption>
-                                    
-                                </figure>
-                            </section>
-                            
-                            <section class="panel">
-                                <footer class="post-footer">
-                                    <section class="meta"> 
-                                        <ul class="post-date">
-                                            <li>
-                                                <a href="http://redesign-9th-st.tumblr.com/post/61151517613/9th-st-pedestrian-version-by-ahhrrr-this-is" title="2 weeks ago">Sep 13th, 2013</a>
-                                            </li>
-                                            
-                                        </ul>
-                                    </section>
-                                    
-                                    <section class="post-controls">
-                                        <ul>
-                                            <li class="share-control">
-                                                <nav class="pop">
-                                                    <a href="#" class="share selector"></a>
-                                                    <div class="pop-menu share-menu south" id="share_61151517613">
-                                                        <ul>
-                                                            <li class="open-in-app"><a href="#" class="share-item open-in-app" data-post="61151517613">Open in app</a></li>
-                                                            <li><a href="http://facebook.com/sharer.php?u=http%3A%2F%2Fredesign-9th-st.tumblr.com%2Fpost%2F61151517613%2F9th-st-pedestrian-version-by-ahhrrr-this-is&amp;t=Redesign%209th%20Street" class="share-item facebook" target="_blank">Facebook</a></li>
-                                                            <li><a href="https://twitter.com/intent/tweet?text=Photo%3A%209th%20St%2C%20Pedestrian%20version%20by%20%40ahhrrr%20This%20is%20never%20going%20to%20happen%20http%3A%2F%2Ftmblr.co%2FZJ9KSquywXkj" class="share-item twitter" target="_blank">Tweet</a></li>
-                                                            <li><a href="mailto:?subject=A%20photo%20from%20Redesign%209th%20Street&amp;body=Photo%3A%209th%20St%2C%20Pedestrian%20version%20by%20%40ahhrrr%20This%20is%20never%20going%20to%20happen%20http%3A%2F%2Fredesign-9th-st.tumblr.com%2Fpost%2F61151517613%2F9th-st-pedestrian-version-by-ahhrrr-this-is" class="share-item mail">Mail</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </nav>
-                                            </li>
-                                            <li class="reblog-control"><a href="http://www.tumblr.com/reblog/61151517613/TleWvile" class="reblog_button" style="display: block;width:21px;height:21px;"><svg width="100%" height="100%" viewBox="0 0 537 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000"><path d="M 98.893,177.139c0.00-7.462, 4.826-12.275, 12.288-12.275L 405.12,164.864 l0.00,83.469 l 118.72-120.947L 405.12,8.678l0.00,81.51 L 49.382,90.189 c-15.206,0.00-27.648,12.429-27.648,27.648l0.00,171.814 l 77.146-71.603L 98.88,177.139 z M 438.874,332.646c0.00,7.45-4.826,12.275-12.275,12.275L 123.75,344.922 l0.00-83.469 l-116.506,120.922l 116.506,120.947l0.00-81.498 l 356.864,0.00 c 15.206,0.00, 27.648-12.454, 27.648-27.648L 508.262,220.134 l-69.402,71.59L 438.861,332.646 z"></path></svg></a></li>
-                                            <li class="like-control"><div class="like_button" data-post-id="61151517613" id="like_button_61151517613"><iframe id="like_iframe_61151517613" src="http://assets.tumblr.com/assets/html/like_iframe.html?_v=e6a1ab8af99851c003d650d932ba2011#name=redesign-9th-st&amp;post_id=61151517613&amp;color=black&amp;rk=TleWvile" scrolling="no" width="20" height="20" frameborder="0" class="like_toggle" allowtransparency="true"></iframe></div></li>
-                                        </ul>
-                                    </section>
-                                </footer>
-                            </section>
-                                    
-                        </div>
+                                        {block:Source}
+                                        <div class="source">{Source}</div>
+                                        {/block:Source}
+                                        {/block:Quote}
 
 
-                    <!-- the postgets duplicated 3x more times -->
-
-                        <!-- copied from actual page -->
-                        <div class="post-wrapper clearfix">
-                            <section class="post">
-                                
-                                <figure class="high-res with-caption" data-photo-width="1280">
-                                    <div class="photo-wrapper">
-                                        <div class="photo-wrapper-inner">
-                                            <a href="http://redesign-9th-st.tumblr.com/image/61151517613"><img src="http://25.media.tumblr.com/d016b2ca32496d0d1748b9277de84bf1/tumblr_mt37x7UoTH1siw8vko1_1280.png" alt="" width="1280" height="491"></a>
+                                        {block:Link}
+                                        <div class="link-wrapper">
+                                            <h2><a {Target} href="{URL}">{Name}</a></h2>
                                         </div>
-                                    </div>
-                                    
-                                    <figcaption class="caption">
-                                        <p><a href="http://streetmix.net/ahhrrr/45/9th-st-pedestrian-version">9th St, Pedestrian version by @ahhrrr</a></p>
-
-                                        <blockquote>
-                                        <p>This is never going to happen</p>
-                                        </blockquote>
-                                    </figcaption>
-                                    
-                                </figure>
-                            </section>
-                            
-                            <section class="panel">
-                                <footer class="post-footer">
-                                    <section class="meta"> 
-                                        <ul class="post-date">
-                                            <li>
-                                                <a href="http://redesign-9th-st.tumblr.com/post/61151517613/9th-st-pedestrian-version-by-ahhrrr-this-is" title="2 weeks ago">Sep 13th, 2013</a>
-                                            </li>
-                                            
-                                        </ul>
-                                    </section>
-                                    
-                                    <section class="post-controls">
-                                        <ul>
-                                            <li class="share-control">
-                                                <nav class="pop">
-                                                    <a href="#" class="share selector"></a>
-                                                    <div class="pop-menu share-menu south" id="share_61151517613">
-                                                        <ul>
-                                                            <li class="open-in-app"><a href="#" class="share-item open-in-app" data-post="61151517613">Open in app</a></li>
-                                                            <li><a href="http://facebook.com/sharer.php?u=http%3A%2F%2Fredesign-9th-st.tumblr.com%2Fpost%2F61151517613%2F9th-st-pedestrian-version-by-ahhrrr-this-is&amp;t=Redesign%209th%20Street" class="share-item facebook" target="_blank">Facebook</a></li>
-                                                            <li><a href="https://twitter.com/intent/tweet?text=Photo%3A%209th%20St%2C%20Pedestrian%20version%20by%20%40ahhrrr%20This%20is%20never%20going%20to%20happen%20http%3A%2F%2Ftmblr.co%2FZJ9KSquywXkj" class="share-item twitter" target="_blank">Tweet</a></li>
-                                                            <li><a href="mailto:?subject=A%20photo%20from%20Redesign%209th%20Street&amp;body=Photo%3A%209th%20St%2C%20Pedestrian%20version%20by%20%40ahhrrr%20This%20is%20never%20going%20to%20happen%20http%3A%2F%2Fredesign-9th-st.tumblr.com%2Fpost%2F61151517613%2F9th-st-pedestrian-version-by-ahhrrr-this-is" class="share-item mail">Mail</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </nav>
-                                            </li>
-                                            <li class="reblog-control"><a href="http://www.tumblr.com/reblog/61151517613/TleWvile" class="reblog_button" style="display: block;width:21px;height:21px;"><svg width="100%" height="100%" viewBox="0 0 537 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000"><path d="M 98.893,177.139c0.00-7.462, 4.826-12.275, 12.288-12.275L 405.12,164.864 l0.00,83.469 l 118.72-120.947L 405.12,8.678l0.00,81.51 L 49.382,90.189 c-15.206,0.00-27.648,12.429-27.648,27.648l0.00,171.814 l 77.146-71.603L 98.88,177.139 z M 438.874,332.646c0.00,7.45-4.826,12.275-12.275,12.275L 123.75,344.922 l0.00-83.469 l-116.506,120.922l 116.506,120.947l0.00-81.498 l 356.864,0.00 c 15.206,0.00, 27.648-12.454, 27.648-27.648L 508.262,220.134 l-69.402,71.59L 438.861,332.646 z"></path></svg></a></li>
-                                            <li class="like-control"><div class="like_button" data-post-id="61151517613" id="like_button_61151517613"><iframe id="like_iframe_61151517613" src="http://assets.tumblr.com/assets/html/like_iframe.html?_v=e6a1ab8af99851c003d650d932ba2011#name=redesign-9th-st&amp;post_id=61151517613&amp;color=black&amp;rk=TleWvile" scrolling="no" width="20" height="20" frameborder="0" class="like_toggle" allowtransparency="true"></iframe></div></li>
-                                        </ul>
-                                    </section>
-                                </footer>
-                            </section>
-                                    
-                        </div>
-
-                        <!-- copied from actual page -->
-                        <div class="post-wrapper clearfix">
-                            <section class="post">
-                                
-                                <figure class="high-res with-caption" data-photo-width="1280">
-                                    <div class="photo-wrapper">
-                                        <div class="photo-wrapper-inner">
-                                            <a href="http://redesign-9th-st.tumblr.com/image/61151517613"><img src="http://25.media.tumblr.com/d016b2ca32496d0d1748b9277de84bf1/tumblr_mt37x7UoTH1siw8vko1_1280.png" alt="" width="1280" height="491"></a>
+                                        {block:Description}
+                                        <div class="caption">
+                                            {Description}
                                         </div>
-                                    </div>
-                                    
-                                    <figcaption class="caption">
-                                        <p><a href="http://streetmix.net/ahhrrr/45/9th-st-pedestrian-version">9th St, Pedestrian version by @ahhrrr</a></p>
+                                        {/block:Description}
+                                        {/block:Link}
 
-                                        <blockquote>
-                                        <p>This is never going to happen</p>
-                                        </blockquote>
-                                    </figcaption>
-                                    
-                                </figure>
-                            </section>
-                            
-                            <section class="panel">
-                                <footer class="post-footer">
-                                    <section class="meta"> 
-                                        <ul class="post-date">
-                                            <li>
-                                                <a href="http://redesign-9th-st.tumblr.com/post/61151517613/9th-st-pedestrian-version-by-ahhrrr-this-is" title="2 weeks ago">Sep 13th, 2013</a>
-                                            </li>
-                                            
-                                        </ul>
-                                    </section>
-                                    
-                                    <section class="post-controls">
-                                        <ul>
-                                            <li class="share-control">
-                                                <nav class="pop">
-                                                    <a href="#" class="share selector"></a>
-                                                    <div class="pop-menu share-menu south" id="share_61151517613">
-                                                        <ul>
-                                                            <li class="open-in-app"><a href="#" class="share-item open-in-app" data-post="61151517613">Open in app</a></li>
-                                                            <li><a href="http://facebook.com/sharer.php?u=http%3A%2F%2Fredesign-9th-st.tumblr.com%2Fpost%2F61151517613%2F9th-st-pedestrian-version-by-ahhrrr-this-is&amp;t=Redesign%209th%20Street" class="share-item facebook" target="_blank">Facebook</a></li>
-                                                            <li><a href="https://twitter.com/intent/tweet?text=Photo%3A%209th%20St%2C%20Pedestrian%20version%20by%20%40ahhrrr%20This%20is%20never%20going%20to%20happen%20http%3A%2F%2Ftmblr.co%2FZJ9KSquywXkj" class="share-item twitter" target="_blank">Tweet</a></li>
-                                                            <li><a href="mailto:?subject=A%20photo%20from%20Redesign%209th%20Street&amp;body=Photo%3A%209th%20St%2C%20Pedestrian%20version%20by%20%40ahhrrr%20This%20is%20never%20going%20to%20happen%20http%3A%2F%2Fredesign-9th-st.tumblr.com%2Fpost%2F61151517613%2F9th-st-pedestrian-version-by-ahhrrr-this-is" class="share-item mail">Mail</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </nav>
-                                            </li>
-                                            <li class="reblog-control"><a href="http://www.tumblr.com/reblog/61151517613/TleWvile" class="reblog_button" style="display: block;width:21px;height:21px;"><svg width="100%" height="100%" viewBox="0 0 537 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000"><path d="M 98.893,177.139c0.00-7.462, 4.826-12.275, 12.288-12.275L 405.12,164.864 l0.00,83.469 l 118.72-120.947L 405.12,8.678l0.00,81.51 L 49.382,90.189 c-15.206,0.00-27.648,12.429-27.648,27.648l0.00,171.814 l 77.146-71.603L 98.88,177.139 z M 438.874,332.646c0.00,7.45-4.826,12.275-12.275,12.275L 123.75,344.922 l0.00-83.469 l-116.506,120.922l 116.506,120.947l0.00-81.498 l 356.864,0.00 c 15.206,0.00, 27.648-12.454, 27.648-27.648L 508.262,220.134 l-69.402,71.59L 438.861,332.646 z"></path></svg></a></li>
-                                            <li class="like-control"><div class="like_button" data-post-id="61151517613" id="like_button_61151517613"><iframe id="like_iframe_61151517613" src="http://assets.tumblr.com/assets/html/like_iframe.html?_v=e6a1ab8af99851c003d650d932ba2011#name=redesign-9th-st&amp;post_id=61151517613&amp;color=black&amp;rk=TleWvile" scrolling="no" width="20" height="20" frameborder="0" class="like_toggle" allowtransparency="true"></iframe></div></li>
-                                        </ul>
-                                    </section>
-                                </footer>
-                            </section>
-                                    
-                        </div>
 
-                        <!-- copied from actual page -->
-                        <div class="post-wrapper clearfix">
-                            <section class="post">
-                                
-                                <figure class="high-res with-caption" data-photo-width="1280">
-                                    <div class="photo-wrapper">
-                                        <div class="photo-wrapper-inner">
-                                            <a href="http://redesign-9th-st.tumblr.com/image/61151517613"><img src="http://25.media.tumblr.com/d016b2ca32496d0d1748b9277de84bf1/tumblr_mt37x7UoTH1siw8vko1_1280.png" alt="" width="1280" height="491"></a>
+                                        {block:Chat}
+                                        {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+                                            <ul class="conversation">
+                                            {block:Lines}
+                                                <li class="chat-{Alt}">{block:Label}<span class="label">{Label}</span>{/block:Label} {Line}</li>
+                                            {/block:Lines}
+                                            </ul>
+                                        {/block:Chat}
+
+
+                                        {block:Audio}
+                                        <div class="audio_container">
+                                            {block:AudioEmbed}
+                                                {AudioEmbed color="white"}
+                                            {/block:AudioEmbed}
                                         </div>
-                                    </div>
-                                    
-                                    <figcaption class="caption">
-                                        <p><a href="http://streetmix.net/ahhrrr/45/9th-st-pedestrian-version">9th St, Pedestrian version by @ahhrrr</a></p>
+                                        {block:Caption}
+                                        <div class="caption">
+                                            {Caption}
+                                        </div>
+                                        {/block:Caption}
+                                        {/block:Audio}
 
-                                        <blockquote>
-                                        <p>This is never going to happen</p>
-                                        </blockquote>
-                                    </figcaption>
+
+                                        {block:Video}                            
+                                        <figure {block:Caption}class="with-caption"{/block:Caption}>
+                                            <div class="video-wrapper">
+                                                {Video-700}
+                                            </div>
+                                            {block:Caption}
+                                            <figcaption class="caption">
+                                                {Caption}
+                                            </figcaption>
+                                            {/block:Caption}
+                                        </figure>
+                                        {/block:Video}
+
+                                        {block:Answer}
+                                        <div class="note-item note-item-asker">
+                                            <div class="text">
+                                                <p class="asker"><strong>{Asker}</strong> asked:</p>
+                                                <div class="asker-question">
+                                                    <p>{Question}</p>
+                                                </div>
+                                            </div>
+                                            <div class="avatar">
+                                                <img class="asker-avatar" src="{AskerPortraitURL-96}" alt="">
+                                            </div>
+                                        </div>
+
+                                        {block:Answerer}
+                                        <div class="note-item note-item-answerer">
+                                            <div class="text">
+                                                <p class="answerer"><strong>{Answerer}</strong> answered:</p>
+                                                <div class="answerer-answer">
+                                                    {Answer}
+                                                </div>
+                                            </div>
+                                            <div class="avatar">
+                                                <img class="answerer-avatar" src="{AnswererPortraitURL-96}" alt="">
+                                            </div>
+                                        </div>
+                                        {/block:Answerer}
+
+                                        <div class="replies">
+                                            {Replies}
+                                        </div>
+                                        {/block:Answer}
+
+                                        {block:RebloggedFrom}
+                                        <section class="attribution-tags clearfix">
+                                            <ul>
+                                                <li>
+                                                    <a class="reblog-link" href="{ReblogParentURL}">{ReblogParentName}</a>
+                                                </li>
+                                                {block:ContentSource}
+                                                <li>
+                                                    <a class="source-link" href="{SourceURL}">{lang:Source}: {SourceTitle}</a>
+                                                </li>
+                                                {/block:ContentSource}
+                                                {block:HasTags}
+                                                    {block:Tags}
+                                                        <li>
+                                                            <a href="{TagURL}" class="tag">{Tag}</a>
+                                                        </li>
+                                                    {/block:Tags}
+                                                {/block:HasTags} 
+                                            </ul>
+                                        </section>
+                                        {/block:RebloggedFrom}
+
+                                        {block:NotReblog}
+                                            {block:HasTags}
+                                            <section class="attribution-tags clearfix">
+                                                <ul>
+                                                    {block:ContentSource}
+                                                    <li>
+                                                        <a class="source-link" href="{SourceURL}">{lang:Source}: {SourceTitle}</a>
+                                                    </li>
+                                                    {/block:ContentSource}
+                                                    {block:Tags}
+                                                        <li>
+                                                            <a href="{TagURL}" class="tag">{Tag}</a>
+                                                        </li>
+                                                    {/block:Tags}
+                                                </ul>
+                                            </section>
+                                            {/block:HasTags}                                
+                                        {/block:NotReblog}
+
+                                    </section>
                                     
-                                </figure>
-                            </section>
-                            
-                            <section class="panel">
-                                <footer class="post-footer">
-                                    <section class="meta"> 
-                                        <ul class="post-date">
-                                            <li>
-                                                <a href="http://redesign-9th-st.tumblr.com/post/61151517613/9th-st-pedestrian-version-by-ahhrrr-this-is" title="2 weeks ago">Sep 13th, 2013</a>
-                                            </li>
+                                    {block:Date}
+                                    <section class="panel">
+                                        <footer class="post-footer">
+                                            <section class="meta"> 
+                                                <ul class="post-date">
+                                                    <li>
+                                                        <a href="{Permalink}" title="{TimeAgo}">{ShortMonth} {DayOfMonth}{DayOfMonthSuffix}, {Year}</a>
+                                                    </li>
+                                                    {block:NoteCount}
+                                                    <li> 
+                                                        <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+                                                    </li>
+                                                    {/block:NoteCount}
+                                                </ul>
+                                            </section>
                                             
-                                        </ul>
+                                            <section class="post-controls">
+                                                <ul>
+                                                    <li class="share-control">
+                                                        <nav class="pop">
+                                                            <a href="#" class="share selector"></a>
+                                                            <div class="pop-menu share-menu south" id="share_{PostID}">
+                                                                <ul>
+                                                                    <li class="open-in-app"><a href="#" class="share-item open-in-app" data-post="{PostID}">Open in app</a></li>
+                                                                    <li><a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" class="share-item facebook" target="_blank">Facebook</a></li>
+                                                                    <li><a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" class="share-item twitter" target="_blank">Tweet</a></li>
+                                                                    <li><a href="mailto:?subject={URLEncodedShareString}&amp;body={URLEncodedMailSummary}" class="share-item mail">Mail</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </nav>
+                                                    </li>
+                                                    <li class="reblog-control">{ReblogButton size="21" color="black"}</li>
+                                                    <li class="like-control">{LikeButton size="20" color="black"}</li>
+                                                </ul>
+                                            </section>
+                                        </footer>
                                     </section>
-                                    
-                                    <section class="post-controls">
-                                        <ul>
-                                            <li class="share-control">
-                                                <nav class="pop">
-                                                    <a href="#" class="share selector"></a>
-                                                    <div class="pop-menu share-menu south" id="share_61151517613">
-                                                        <ul>
-                                                            <li class="open-in-app"><a href="#" class="share-item open-in-app" data-post="61151517613">Open in app</a></li>
-                                                            <li><a href="http://facebook.com/sharer.php?u=http%3A%2F%2Fredesign-9th-st.tumblr.com%2Fpost%2F61151517613%2F9th-st-pedestrian-version-by-ahhrrr-this-is&amp;t=Redesign%209th%20Street" class="share-item facebook" target="_blank">Facebook</a></li>
-                                                            <li><a href="https://twitter.com/intent/tweet?text=Photo%3A%209th%20St%2C%20Pedestrian%20version%20by%20%40ahhrrr%20This%20is%20never%20going%20to%20happen%20http%3A%2F%2Ftmblr.co%2FZJ9KSquywXkj" class="share-item twitter" target="_blank">Tweet</a></li>
-                                                            <li><a href="mailto:?subject=A%20photo%20from%20Redesign%209th%20Street&amp;body=Photo%3A%209th%20St%2C%20Pedestrian%20version%20by%20%40ahhrrr%20This%20is%20never%20going%20to%20happen%20http%3A%2F%2Fredesign-9th-st.tumblr.com%2Fpost%2F61151517613%2F9th-st-pedestrian-version-by-ahhrrr-this-is" class="share-item mail">Mail</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </nav>
-                                            </li>
-                                            <li class="reblog-control"><a href="http://www.tumblr.com/reblog/61151517613/TleWvile" class="reblog_button" style="display: block;width:21px;height:21px;"><svg width="100%" height="100%" viewBox="0 0 537 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000"><path d="M 98.893,177.139c0.00-7.462, 4.826-12.275, 12.288-12.275L 405.12,164.864 l0.00,83.469 l 118.72-120.947L 405.12,8.678l0.00,81.51 L 49.382,90.189 c-15.206,0.00-27.648,12.429-27.648,27.648l0.00,171.814 l 77.146-71.603L 98.88,177.139 z M 438.874,332.646c0.00,7.45-4.826,12.275-12.275,12.275L 123.75,344.922 l0.00-83.469 l-116.506,120.922l 116.506,120.947l0.00-81.498 l 356.864,0.00 c 15.206,0.00, 27.648-12.454, 27.648-27.648L 508.262,220.134 l-69.402,71.59L 438.861,332.646 z"></path></svg></a></li>
-                                            <li class="like-control"><div class="like_button" data-post-id="61151517613" id="like_button_61151517613"><iframe id="like_iframe_61151517613" src="http://assets.tumblr.com/assets/html/like_iframe.html?_v=e6a1ab8af99851c003d650d932ba2011#name=redesign-9th-st&amp;post_id=61151517613&amp;color=black&amp;rk=TleWvile" scrolling="no" width="20" height="20" frameborder="0" class="like_toggle" allowtransparency="true"></iframe></div></li>
-                                        </ul>
-                                    </section>
-                                </footer>
-                            </section>
-                                    
-                        </div>
+                                    {/block:Date}
+                                    {block:PermalinkPage}
 
-                    </article>
+                                        {block:PostNotes}
+                                        <section id="notes" class="notes-wrapper clearfix">
+                                            {PostNotes-64}
+                                        </section>
+                                        {/block:PostNotes}
 
+                                        {block:Date}
+
+                                            {block:IfDisqusShortname}
+                                            <section class="comments">
+                                                <div id="disqus_thread"></div>
+                                                <script type="text/javascript">
+                                                  (function() {
+                                                   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                                   dsq.src = 'http://{text:Disqus Shortname}.disqus.com/embed.js';
+                                                   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                                                  })();
+                                                </script>
+                                                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={text:Disqus Shortname}">comments powered by Disqus.</a></noscript>
+                                                <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+                                            </section>
+                                            {/block:IfDisqusShortname}
+
+                                        {/block:Date}
+
+                                    {/block:PermalinkPage}
+                                </div>
+                            </article>
+                    {/block:Posts}
                 <footer id='footer' class='content clearfix'>
                   {block:IndexPage}
                       {block:Pagination}
