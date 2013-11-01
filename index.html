@@ -66,19 +66,20 @@
         <![endif]-->
 
         <style>
+            @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic);
 
             /* Colors */
             body {
                 background: white;
-                font-family: 'Helvetica Neue', HelveticaNeue, Arial, sans-serif;
+                font-family: 'Lato', 'Helvetica Neue', HelveticaNeue, Arial, sans-serif;
             }
 
             h1 {
-                font-family: 'Helvetica Neue', HelveticaNeue, Arial, sans-serif;
+                font-family: 'Lato', 'Helvetica Neue', HelveticaNeue, Arial, sans-serif;
             }
 
             h2, .attribution-tags {
-                font-family: 'Helvetica Neue', HelveticaNeue, Arial, sans-serif;
+                font-family: 'Lato', 'Helvetica Neue', HelveticaNeue, Arial, sans-serif;
             }
 
             h1 a,
@@ -87,14 +88,6 @@
             .sub-title,
             .search-header {
                 color: #444444; /* {TitleColor} */
-            }
-            
-            #pagination a.next:after {
-                border-left-color: #444444; /* {TitleColor} */
-            }
-
-            #pagination a.previous:after {
-                border-right-color: #444444; /* {TitleColor} */
             }
 
             .h-line {
@@ -149,22 +142,26 @@
 
             #left-column {
                 position: absolute;
-                width: 380px;
+                width: 400px;
                 height: 100%;
                 box-sizing: border-box;
                 padding: 30px;
-                background-color: #f6f6f6; /* {BackgroundColor} */
+                background-color: #fff; /* {BackgroundColor} */
                 z-index: 5;
+                border-right: 3px solid #85b7cc;
             }
 
-            header h1 {
+            h1 {
                 font-size: 36px;
                 margin-top: 10px;
+                font-weight: 300;
+                letter-spacing: -1px;
+                line-height: 1.1em;
             }
 
             .sub-title {
                 color: black;
-                font-size: 18px;
+                font-size: 16px;
             }
 
             .project-info {
@@ -173,14 +170,15 @@
             }
 
             .project-info h2 {
-                font-size: 18px;
+                font-size: 20px;
                 margin-top: 24px;
+                letter-spacing: -1px;
             }
 
             .project-info hr {
                 height: 0;
                 border: 0px;
-                border-top: 1px solid #d1d1d1;
+                border-top: 1px solid #a9ccdb;
                 margin: 60px 0 30px;
             }
 
@@ -211,7 +209,7 @@
                 margin: 0;  /* overrides tumblr.com/main.css */
                 width: 100%;
                 box-sizing: border-box;  /* overrides tumblr.com/main.css */
-                padding-left: 380px;
+                padding-left: 400px;
                 max-width: none;  /* overrides tumblr.com/main.css */
             }
 
@@ -243,7 +241,7 @@
                 content: '';
                 position: absolute;
                 display: block;
-                background-image: url('http://static.tumblr.com/5ca8sut/sbDmtz65j/remix-me.png');
+                background-image: url('http://static.tumblr.com/5ca8sut/DJKmvk5m1/remix-me.png);
                 width: 149px;
                 height: 149px;
                 top: 0;
@@ -253,7 +251,6 @@
             #streetmix-today {
                 height: 170px;
                 background-image: url('{image:Today Street Image}');
-                border-radius: 5px;
             }
 
             #streetmix-proposed {
@@ -297,10 +294,28 @@
                 margin-top: 30px;
             }
 
+            #pagination a {
+                border-top: 1px solid #a9ccdb;
+                border-bottom: 1px solid #a9ccdb;
+                border-radius: 0;
+                opacity: 1.0;
+                background-color: #e6f0f5;
+            }
+
+            #pagination a:hover {
+                background-color: #dceaf0;
+            }
+
+            #pagination .bg {
+                /* Overrides main.css */
+                border-radius: 0;
+                border: 0;
+            }
 
             /* Some basic responsive CSS */
 
             @media (max-width: 568px) {
+
                 #left-column {
                     position: relative;
                     width: 100%;
@@ -324,6 +339,15 @@
 
                 #about {
                     display: none;
+                }
+
+                #posts article {
+                    margin-bottom: 40px;
+                }
+
+                #pagination {
+                    padding-left: 30px;
+                    padding-right: 30px;
                 }
 
             }
@@ -411,7 +435,7 @@
                 <!-- end proposed image -->
 
                 <section class='post-ish'>
-                    <h2>Your proposals so far:</h2>
+                    <h1>Your proposals so far:</h1>
                 </section>
 
                 <div data-page-id='{CurrentPage}'>
